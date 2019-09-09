@@ -19,7 +19,6 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
     
     c. When the correct index is found, copy temp into this position
 
-
 ### Your Task
 - Implement the `insertion_sort()` function in the Guided Project with your TA
 
