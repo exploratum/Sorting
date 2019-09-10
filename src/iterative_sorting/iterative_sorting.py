@@ -5,7 +5,7 @@ def selection_sort( arr ):
         cur_index = i 
         smallest_index = cur_index
 
-        #One pass from cur_index to the value before the last one
+        #One pass from cur_index to the value before the last one of the array
         # try to find index of the smallest element
         for j in range(i + 1, len(arr)):
            if arr[smallest_index] > arr[j]:
@@ -13,9 +13,7 @@ def selection_sort( arr ):
 
         #swap value at cur_index with the smallest element found at smallest_index
         if smallest_index != cur_index:
-            temp = arr[smallest_index]
-            arr[smallest_index] = arr[cur_index]
-            arr[cur_index] = temp
+            arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
     return arr
 
