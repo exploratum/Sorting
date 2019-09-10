@@ -22,21 +22,17 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
+    swaps = True
+    while swaps == True:
 
-    while True:
-        #number of swaps done during a pass
-        swaps = 0
-        # One pass swapping adjacent values
+        #no swaps yet at the beginning
+        swaps = False
+
+        # One pass and swap adjacent values if necessary
         for i in range(0, len(arr) - 1):
             if arr[i] > arr[i + 1]:
-                temp = arr[i]
-                arr[i] = arr[i + 1]
-                arr[i+1] = temp
-                swaps += 1
-
-        #if no swaps was done during the pass then the array is sorted
-        if swaps == 0:
-            break
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swaps = True
 
     return arr
 
@@ -44,13 +40,19 @@ def bubble_sort(arr):
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
+    #count array size chosen from looking at the elements in the testing file
     count = [0] * 200
+
+    #count frequency of a number and save it in count array
     for num in arr:
         if num < 0:
             return "Error, negative numbers not allowed in Count Sort"
         else:
             count[num] += 1
+
+    #clear original array and reset its size to 0 to append new sorted values
     arr.clear()
+
     for i in range(len(count)):
         num = count[i]
         if num != 0:
