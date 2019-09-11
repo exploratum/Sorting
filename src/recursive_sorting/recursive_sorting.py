@@ -25,7 +25,7 @@ def merge_sort( arr ):
         return arr
 
     else:
-        middle = int((len(arr)/2))
+        middle = len(arr)//2
         arrA = arr[0:middle]
         arrB = arr[middle:]
 
