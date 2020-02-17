@@ -44,7 +44,7 @@ def count_sort(arr, maximum=-1):
     #Better solution
     #if maximun == -1
     #maximun = max(arr)
-    #count = [0] * maximum
+    #count = [0] * maximum+1
 
     # count frequency of a number and save it in count array
     for num in arr:
