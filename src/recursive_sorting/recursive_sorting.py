@@ -10,10 +10,10 @@ def merge( arrA, arrB ):
         else:
             merged_arr.append(arrB.pop(0))
 
-        if not arrA:
-            merged_arr.extend(arrB)
-        if not arrB:
-            merged_arr.extend(arrA)
+    if not arrA:
+        merged_arr.extend(arrB)
+    if not arrB:
+        merged_arr.extend(arrA)
 
     return merged_arr
 
