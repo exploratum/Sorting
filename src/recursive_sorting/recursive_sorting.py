@@ -9,11 +9,41 @@ def merge( arrA, arrB ):
             merged_arr.append(arrA.pop(0))
         else:
             merged_arr.append(arrB.pop(0))
+            
 
     if not arrA:
         merged_arr.extend(arrB)
     if not arrB:
         merged_arr.extend(arrA)
+
+    return merged_arr
+
+###########################################################################################################################################
+#   Alternate solution for merge function to improve performance - avoid list shifting after popping at the begining - pop at end instead #
+###########################################################################################################################################
+def merge2( arrA, arrB ):
+
+    merged_arr_length = len(arrA) + len(arrB)
+    merged_arr = [0] * merged_arr_length
+
+    
+    for i in reversed(range(merged_arr_length)):
+        if not arrA or not arrB:
+            break
+        if arrA[len(arrA) - 1] > arrB[len(arrB) - 1]:
+            merged_arr[i] = arrA.pop()
+        else:
+            merged_arr[i] = arrB.pop()
+            
+
+    if not arrA:
+        for i in range(0, len(arrB)):
+            merged_arr[i] = arrB[i]
+
+    if not arrB:
+        for i in range(0, len(arrA)):
+            merged_arr[i] = arrA[i]
+
 
     return merged_arr
 
@@ -34,6 +64,10 @@ def merge_sort( arr ):
 
         arr = merge(mergedA, mergedB)
         return arr
+
+
+
+
 
 
 ####################################################################
